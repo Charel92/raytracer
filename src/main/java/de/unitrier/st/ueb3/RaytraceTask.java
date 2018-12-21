@@ -21,7 +21,7 @@ public class RaytraceTask implements Callable {
                         (float) (((0.5 + dj) * tracer.tan_fovy * 2.0) / tracer.height - tracer.tan_fovy),
                         (float) 1f);    // rd
                 eye_ray.normalize();
-                col[j]= tracer.addColors(tracer.image[i][j],tracer.rayTrace(eye_ray,0),1.0f/tracer.rayPerPixel);
+                col[j]= RGB.addColors(tracer.image[i][j],tracer.rayTrace(eye_ray,0),1.0f/tracer.rayPerPixel);
             }
         }
         return col;
